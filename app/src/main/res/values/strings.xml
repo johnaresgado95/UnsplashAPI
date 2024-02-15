@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">UnsplashAPI</string>
+    <string name="beta_version">Version 1.0</string>
+
+    <string name="lorem">Lorem Ipsum</string>
+    <!--Menu-->
+    <string name="home">Home</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="profile">Profile</string>
+
+    <string name="search">Search</string>
+    <string name="deal_of_the_day">Deal of the day</string>
+    <string name="recommendations">Recommendations for you</string>
+    <string name="see_all">See All</string>
+    <string name="name">Table</string>
+    <string name="price">US $182.00</string>
+    <string name="sale">45% Off</string>
+    <string name="description">Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes and sandals</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="marked">Mark as Read</string>
+    <string name="price_text">Price</string>
+    <string name="saleprice_text">Sale Price</string>
+    <string name="quantity_text">Quantity</string>
+    <string name="sizes_text">Sizes Available</string>
+    <string name="empty_cart_title">Unfortunately, Your Cart Is Empty</string>
+    <string name="empty_cart_subtitle">Add Something to Your Cart</string>
+    <string name="continue_shopping">Continue Shopping</string>
+
+    <string name="notification_title">Notification Title</string>
+    <string name="notification_subtitle">Notification SubTitle</string>
+
+    <string name="profile_name">Juan Dela Cruz</string>
+    <string name="profile_address">Pasig, Metro Manila, Philippines</string>
+    <string name="terms">Terms and Conditions</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+</resources>
