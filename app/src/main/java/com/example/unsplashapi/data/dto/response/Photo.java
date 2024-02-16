@@ -2,6 +2,8 @@ package com.example.unsplashapi.data.dto.response;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Photo {
     @SerializedName("id")
     private String id;
@@ -30,6 +32,15 @@ public class Photo {
     @SerializedName("downloads")
     private String downloads;
 
+    @SerializedName("tags")
+    private List<Tags> tags;
+
+    public List<Tags> getTags() {
+        return tags;
+    }
+    public void setTags(List<Tags> tags) {
+        this.tags = tags;
+    }
     public String getId() {
         return id;
     }

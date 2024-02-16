@@ -1,0 +1,22 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<resources>
+    <dimen name="padding15">16dp</dimen>
+    <dimen name="padding10">10dp</dimen>
+    <dimen name="padding5">5dp</dimen>
+    <dimen name="padding3">3dp</dimen>
+    <dimen name="roundcorner5">5dp</dimen>
+    <dimen name="padding40">40dp</dimen>
+    <dimen name="placeholder_image">153dp</dimen>
+    <dimen name="padding80">100dp</dimen>
+    <dimen name="placeholder_text_height">18dp</dimen>
+    <dimen name="profile_size">60dp</dimen>
+
+    <!--Font Size-->
+    <dimen name="h1">24sp</dimen>
+    <dimen name="header">20sp</dimen>
+    <dimen name="h6">12sp</dimen>
+    <dimen name="h5">14sp</dimen>
+    <dimen name="h4">16sp</dimen>
+    <dimen name="h3">18sp</dimen>
+
+</resources>
