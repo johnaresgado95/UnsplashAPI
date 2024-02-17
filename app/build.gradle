@@ -6,6 +6,9 @@ android {
     namespace 'com.example.unsplashapi'
     compileSdk 33
 
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
     defaultConfig {
         applicationId "com.example.unsplashapi"
         minSdk 28
@@ -13,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "CLIENT_ID", "\"$CLIENT_ID\""
+        buildConfigField "String", "CLIENT_ID", properties.getProperty('clientid')
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
