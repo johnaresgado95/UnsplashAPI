@@ -59,7 +59,6 @@ public class HomeFragment extends Fragment {
             shimmerLayout.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
             shimmerLayout.stopShimmer();
-
         });
 
         photoViewModel.getErrorMessage().observe(getViewLifecycleOwner(), errorMessage -> {

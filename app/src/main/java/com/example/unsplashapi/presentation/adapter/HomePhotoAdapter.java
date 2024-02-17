@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.unsplashapi.R;
 import com.example.unsplashapi.data.dto.response.Photo;
+import com.example.unsplashapi.presentation.common.bottomsheet.UserSocialBottom;
 import com.example.unsplashapi.presentation.photodetail.PhotoDetailActivity;
 
 import java.util.List;
@@ -46,15 +48,23 @@ public class HomePhotoAdapter extends RecyclerView.Adapter<HomePhotoAdapter.Phot
                 .load(photo.getUrls().getRegular())
                 .into(holder.photoImageView);
 
+        Glide.with(context)
+                .load(photo.getUser().getProfileImage().getSmall())
+                .into(holder.photoProfileImage);
+
         if (photo.isLiked_by_user()) {
             holder.likeByUserTrue.setVisibility(View.VISIBLE);
         } else {
             holder.likeByUserFalse.setVisibility(View.VISIBLE);
         }
 
-        holder.photoName.setText(photo.getUser().getLocation() == null ? "No Content" : photo.getUser().getLocation());
-        holder.photoTaken.setText(photo.getUser().getName() == null ? "No Content" : photo.getUser().getName());
+        holder.photoName.setText(photo.getUser().getLocation() != null ? photo.getUser().getLocation() : "No Content");
+        holder.photoTaken.setText(photo.getUser().getName() != null ? photo.getUser().getName() : "No Content");
         holder.likes.setText(photo.getLikes() == null ? "0" : photo.getLikes());
+        holder.photoProfileImage.setOnClickListener(view -> {
+            UserSocialBottom socialBottom = new UserSocialBottom(context, photo.getUser());
+            socialBottom.show();
+        });
     }
 
     @Override
@@ -63,7 +73,7 @@ public class HomePhotoAdapter extends RecyclerView.Adapter<HomePhotoAdapter.Phot
     }
 
     public class PhotoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView photoImageView, likeByUserTrue, likeByUserFalse;
+        ImageView photoImageView, likeByUserTrue, likeByUserFalse, photoProfileImage;
         TextView photoName, photoTaken, likes;
 
         CardView pCard;
@@ -76,6 +86,7 @@ public class HomePhotoAdapter extends RecyclerView.Adapter<HomePhotoAdapter.Phot
             likeByUserFalse = itemView.findViewById(R.id.like_by_user_false);
             photoName = itemView.findViewById(R.id.photo_name);
             photoTaken = itemView.findViewById(R.id.photo_taken);
+            photoProfileImage = itemView.findViewById(R.id.photo_profile_image);
             likes = itemView.findViewById(R.id.likes);
             pCard.setOnClickListener((View.OnClickListener) this);
         }

@@ -18,10 +18,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.unsplashapi.R;
-import com.example.unsplashapi.data.util.DisplayUtil;
 import com.example.unsplashapi.data.util.NoInternetDialog;
 import com.example.unsplashapi.domain.PhotoDetailRepository;
 import com.example.unsplashapi.presentation.adapter.TagsAdapter;
+import com.example.unsplashapi.presentation.common.bottomsheet.UserSocialBottom;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 public class PhotoDetailActivity extends AppCompatActivity {
@@ -31,7 +31,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
     private PhotoDetailViewModel photoDetailViewModel;
     private ImageView imageMain, userImage;
     private RelativeLayout backButton;
-    private LinearLayout pLL;
+    private LinearLayout pLL, userInfoLL;
     private TextView title, name, likes, views, downloads, description;
     private TagsAdapter tagAdapter;
     private ShimmerFrameLayout shimmerFrameLayout;
@@ -44,6 +44,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         recyclerView = findViewById(R.id.recycler_view_tags);
         pLL = findViewById(R.id.pLL);
+        userInfoLL = findViewById(R.id.userInfoLL);
         cViewMain = findViewById(R.id.cViewMain);
         imageMain = findViewById(R.id.imageMain);
         userImage = findViewById(R.id.user_profile_image);
@@ -55,13 +56,14 @@ public class PhotoDetailActivity extends AppCompatActivity {
         downloads = findViewById(R.id.total_downloads);
         description = findViewById(R.id.description);
         shimmerFrameLayout = findViewById(R.id.shimmer_view_support_detail);
+
         shimmerFrameLayout.startShimmer();
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         PhotoDetailRepository.setPhotoId(bundle.getString("id"));
         photoDetailViewModel = new ViewModelProvider(this).get(PhotoDetailViewModel.class);
         tagAdapter = new TagsAdapter();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(tagAdapter);
         photoDetailViewModel.getPhotoDetail().observe(this, photoDetail -> {
 
@@ -84,6 +86,11 @@ public class PhotoDetailActivity extends AppCompatActivity {
             pLL.setVisibility(View.VISIBLE);
             shimmerFrameLayout.stopShimmer();
             tagAdapter.setTags(photoDetail.getTags(), this);
+
+            userInfoLL.setOnClickListener(view -> {
+                    UserSocialBottom socialBottom = new UserSocialBottom(this, photoDetail.getUser());
+                    socialBottom.show();
+            });
         });
 
 

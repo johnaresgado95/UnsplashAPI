@@ -45,6 +45,8 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tagTitle;
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tagTitle = itemView.findViewById(R.id.textTags);

@@ -26,6 +26,7 @@
                 android:layout_marginStart="-17dp"
                 android:layout_width="match_parent"
                 android:layout_height="325dp"
+                app:layout_scrollFlags="scroll|enterAlways"
                 android:gravity="center_vertical">
 
                 <androidx.cardview.widget.CardView
@@ -64,7 +65,7 @@
                 android:src="@drawable/arrow_back" />
         </RelativeLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="550dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -73,6 +74,7 @@
             app:layout_constraintVertical_bias="0.0">
 
             <LinearLayout
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:id="@+id/pLL"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -89,12 +91,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="@string/lorem"
                     android:textColor="@color/black"
                     android:textSize="24sp" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:clickable="true"
+                    android:id="@+id/userInfoLL"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
@@ -102,15 +105,15 @@
                     app:layout_constraintTop_toBottomOf="@+id/cViewMain">
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         app:cardCornerRadius="50dp"
                         app:cardElevation="0dp">
 
                         <ImageView
                             android:id="@+id/user_profile_image"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/photo_camera" />
 
@@ -123,9 +126,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="@string/lorem"
                         android:textColor="@color/black"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -167,7 +169,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="6dp"
                                 android:fontFamily="@font/poppins_semibold"
-                                android:text="123"
                                 android:textSize="11sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -205,7 +206,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="6dp"
                                 android:fontFamily="@font/poppins_semibold"
-                                android:text="123"
                                 android:textSize="11sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -244,7 +244,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="6dp"
                                 android:fontFamily="@font/poppins_semibold"
-                                android:text="123"
                                 android:textSize="11sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -257,9 +256,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="6dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum" />
-
+                    android:fontFamily="@font/poppins_regular"/>
                 <!-- Tags -->
                 <TextView
                     android:layout_width="wrap_content"
@@ -275,15 +272,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:elevation="6dp"
-
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    app:reverseLayout="false" />
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="350dp" />
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmer_view_support_detail"

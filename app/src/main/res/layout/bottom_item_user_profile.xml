@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/icon_user_profile_main"
+            android:layout_height="@dimen/icon_user_profile_main"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/user_profile_image"
+                android:layout_width="@dimen/icon_user_profile_main"
+                android:layout_height="@dimen/icon_user_profile_main"
+                android:scaleType="centerCrop"
+                android:src="@drawable/photo_camera" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:animateLayoutChanges="true"
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/lorem"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:animateLayoutChanges="true"
+            android:id="@+id/user_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/lorem"
+            android:textColor="@color/black"
+            android:textSize="@dimen/h5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutInstagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/icon_user_profile"
+            android:layout_height="@dimen/icon_user_profile"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="@dimen/icon_user_profile"
+                android:layout_height="@dimen/icon_user_profile"
+                android:scaleType="centerCrop"
+                android:src="@drawable/instagram" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/instagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:animateLayoutChanges="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/profile_name"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPortfolio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/icon_user_profile"
+            android:layout_height="@dimen/icon_user_profile"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="@dimen/icon_user_profile"
+                android:layout_height="@dimen/icon_user_profile"
+                android:scaleType="centerCrop"
+                android:src="@drawable/internet" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/porfolio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:animateLayoutChanges="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/profile_name"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTwitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/icon_user_profile"
+            android:layout_height="@dimen/icon_user_profile"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="@dimen/icon_user_profile"
+                android:layout_height="@dimen/icon_user_profile"
+                android:scaleType="centerCrop"
+                android:src="@drawable/twitter" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/twitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:animateLayoutChanges="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/profile_name"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPaypal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/icon_user_profile"
+            android:layout_height="@dimen/icon_user_profile"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="@dimen/icon_user_profile"
+                android:layout_height="@dimen/icon_user_profile"
+                android:scaleType="centerCrop"
+                android:src="@drawable/paypal" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/paypal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:animateLayoutChanges="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/profile_name"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
