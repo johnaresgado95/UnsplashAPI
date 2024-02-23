@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Tags {
 
-    @SerializedName("types")
+    @SerializedName("type")
     private String types;
 
     @SerializedName("title")

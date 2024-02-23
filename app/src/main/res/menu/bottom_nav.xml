@@ -5,6 +5,10 @@
         android:title="@string/home"
         android:icon="@drawable/home_menu"/>
 
+    <item android:id="@+id/mSearch"
+        android:title="@string/search"
+        android:icon="@drawable/search"/>
+
     <item android:id="@+id/mProfile"
         android:title="@string/profile"
         android:icon="@drawable/user_menu"/>

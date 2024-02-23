@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/milkwhite"
-    tools:context=".presentation.fragments.HomeFragment">
+    tools:context=".presentation.searchphotoresult.SearchResultActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -34,7 +33,7 @@
                     android:layout_marginEnd="16dp">
 
                     <ImageView
-                        android:id="@+id/menu"
+                        android:id="@+id/back"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
@@ -42,9 +41,10 @@
                         android:layout_alignParentBottom="true"
                         android:clickable="true"
                         android:focusable="true"
-                        android:src="@drawable/menu_icon" />
+                        android:src="@drawable/baseline_arrow_back_24" />
 
                     <TextView
+                        android:id="@+id/searchtitle"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/poppins_semibold"
@@ -54,64 +54,16 @@
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
-                    <ImageView
-                        android:id="@+id/profile"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:src="@drawable/myprofile" />
-
-
                 </RelativeLayout>
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_photos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:overScrollMode="never"
-            android:visibility="gone"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/shimmer_view_support"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_search_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <include layout="@layout/home_shimmer" />
-
-            <include layout="@layout/home_shimmer" />
-
-            <include layout="@layout/home_shimmer" />
-
-            <include layout="@layout/home_shimmer" />
-
-        </LinearLayout>
-
-    </com.facebook.shimmer.ShimmerFrameLayout>
-
-
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

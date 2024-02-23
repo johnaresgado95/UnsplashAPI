@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import com.example.unsplashapi.R;
 import com.example.unsplashapi.presentation.fragments.HomeFragment;
 import com.example.unsplashapi.presentation.fragments.ProfileFragment;
+import com.example.unsplashapi.presentation.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class UnsplashActivity extends AppCompatActivity {
@@ -46,6 +47,9 @@ public class UnsplashActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.mHome:
                         selectedFragment = new HomeFragment();
+                        break;
+                    case R.id.mSearch:
+                        selectedFragment = new SearchFragment();
                         break;
                     case R.id.mProfile:
                         selectedFragment = new ProfileFragment();
